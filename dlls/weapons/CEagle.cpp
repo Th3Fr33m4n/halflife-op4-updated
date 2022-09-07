@@ -284,6 +284,10 @@ void CEagle::Reload()
 			m_flTimeWeaponIdle = UTIL_WeaponTimeBase() + UTIL_SharedRandomFloat(m_pPlayer->random_seed, 10.0, 15.0);
 		}
 	}
+	
+#ifndef CLIENT_DLL
+	UpdateLaser();
+#endif
 }
 
 void CEagle::UpdateLaser()
